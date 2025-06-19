@@ -1,0 +1,44 @@
+
+spring:
+  application:
+    name: eventus_core
+  sql:
+    init:
+      mode: never
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eventus
+    username: root
+    password: test
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 1000
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: flash-sale
+  rabbitmq:
+    host: localhost
+    port: 5672
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      lettuce:
+        pool:
+          max-active: 20
+          max-idle: 10
+          min-idle: 2
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui
+    display-request-duration: true
