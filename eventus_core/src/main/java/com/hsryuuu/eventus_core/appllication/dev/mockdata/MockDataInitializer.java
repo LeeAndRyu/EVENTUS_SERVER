@@ -25,24 +25,29 @@ public class MockDataInitializer implements CommandLineRunner {
     }
 
     private void createUser(){
-        AppUser admin1 = AppUser.builder()
-                .username("hsryu")
-                .password("hsryu")
-                .email("happyhsryu@gmail.com")
-                .role(UserRole.ADMIN)
-                .nickname("ADMIN-hsryuuuu")
-                .phone("010-0000-0000")
-                .build();
-        AppUser admin2 = AppUser.builder()
-                .username("oluzr")
-                .password("oluzr")
-                .email("oluzr@gmail.com")
-                .role(UserRole.ADMIN)
-                .nickname("ADMIN-oluzr")
-                .phone("010-0000-0000")
-                .build();
-
-        userRepository.save(admin1);
-        userRepository.save(admin2);
+        final String USERNAME_HSRYU = "hsryu";
+        final String USERNAME_OLUZR = "oluzr";
+        if(!userRepository.existsByUsername(USERNAME_HSRYU)){
+            AppUser admin1 = AppUser.builder()
+                    .username(USERNAME_HSRYU)
+                    .password(USERNAME_HSRYU)
+                    .email("happyhsryu@gmail.com")
+                    .role(UserRole.ADMIN)
+                    .nickname("ADMIN-hsryuuuu")
+                    .phone("010-0000-0000")
+                    .build();
+            userRepository.save(admin1);
+        }
+        if(!userRepository.existsByUsername(USERNAME_OLUZR)){
+            AppUser admin2 = AppUser.builder()
+                    .username("oluzr")
+                    .password("oluzr")
+                    .email("oluzr@gmail.com")
+                    .role(UserRole.ADMIN)
+                    .nickname("ADMIN-oluzr")
+                    .phone("010-0000-0000")
+                    .build();
+            userRepository.save(admin2);
+        }
     }
 }
