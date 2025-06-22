@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.UUID;
 
-public interface AuthenticatedPrincipal extends UserDetails {
+public interface AuthPrincipal extends UserDetails {
     UUID getId();
 
     UserRole getUserRole();

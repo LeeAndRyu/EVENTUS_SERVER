@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
-public class AppUserPrincipal implements AuthenticatedPrincipal, UserDetails {
+public class AppUserPrincipal implements AuthPrincipal, UserDetails {
 
     private final UUID id;
     private final String username;

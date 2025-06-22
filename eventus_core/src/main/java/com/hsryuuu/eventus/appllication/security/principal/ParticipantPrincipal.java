@@ -11,7 +11,7 @@ import java.util.UUID;
 
 // 비로그인 유저
 @AllArgsConstructor
-public class ParticipantPrincipal implements AuthenticatedPrincipal, UserDetails {
+public class ParticipantPrincipal implements AuthPrincipal, UserDetails {
 
     private final UUID id;
     private final String username;

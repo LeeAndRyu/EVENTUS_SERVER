@@ -2,7 +2,7 @@ package com.hsryuuu.eventus.appllication.security;
 
 import com.hsryuuu.eventus.appllication.dev.constants.DevConstants;
 import com.hsryuuu.eventus.appllication.security.principal.AppUserPrincipal;
-import com.hsryuuu.eventus.appllication.security.principal.AuthenticatedPrincipal;
+import com.hsryuuu.eventus.appllication.security.principal.AuthPrincipal;
 import com.hsryuuu.eventus.user.appuser.UserRole;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -40,7 +40,7 @@ public class BypassAuthenticationFilter extends OncePerRequestFilter {
     private void setAllAuthorizedUser() {
         List<GrantedAuthority> allUserAuthorities = this.getAllUserAuthorities();
 
-        AuthenticatedPrincipal principal = new AppUserPrincipal(
+        AuthPrincipal principal = new AppUserPrincipal(
                 UUID.randomUUID(),
                 DevConstants.ADMIN_USER_NAME,
                 UserRole.ADMIN,
