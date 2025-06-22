@@ -1,8 +1,10 @@
 package com.hsryuuu.eventus;
 
+import com.hsryuuu.eventus.appllication.security.principal.AuthenticatedPrincipal;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +23,7 @@ public class TestController {
     private final Environment env;
 
 
-    @GetMapping
+    @GetMapping("/properties")
     public Map<String, Object> test() {
         Map<String, Object> response = new LinkedHashMap<>();
 
@@ -45,5 +47,10 @@ public class TestController {
         }
 
         return response;
+    }
+
+    @GetMapping("/current-user")
+    public AuthenticatedPrincipal currentUser(@AuthenticationPrincipal AuthenticatedPrincipal authenticatedPrincipal) {
+        return authenticatedPrincipal;
     }
 }
