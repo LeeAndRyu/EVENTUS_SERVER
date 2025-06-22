@@ -32,6 +32,9 @@ dependencies {
 
     // PostgreSQL
     implementation 'org.postgresql:postgresql:42.7.5'
+    // Flyway
+    implementation("org.flywaydb:flyway-core")
+    runtimeOnly("org.flywaydb:flyway-database-postgresql")
 
     // QueryDSL
     implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
