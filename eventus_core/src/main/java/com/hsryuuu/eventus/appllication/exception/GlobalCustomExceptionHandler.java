@@ -5,6 +5,7 @@ import com.hsryuuu.eventus.appllication.type.OperationResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authorization.AuthorizationDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -45,6 +46,17 @@ public class GlobalCustomExceptionHandler {
 
         log.error("MethodArgumentNotValidException: {}", e.getMessage(), e);
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(standardResponse);
+    }
+
+    @ExceptionHandler(AuthorizationDeniedException.class)
+    public ResponseEntity<StandardResponse<Object>> handleSecurityException(AuthorizationDeniedException e) {
+        StandardResponse<Object> standardResponse = StandardResponse.builder()
+                .result(OperationResult.ERROR)
+                .statusCode(HttpStatus.FORBIDDEN.value())
+                .message("접근 권한이 없습니다.")
+                .build();
+        log.info("Authorization DeniedException: {}", e.getMessage(), e);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(standardResponse);
     }
 
 

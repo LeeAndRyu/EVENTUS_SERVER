@@ -15,6 +15,9 @@ public enum ErrorCode {
     BAD_REQUEST_ENUM(HttpStatus.BAD_REQUEST, "잘못된 enum 값 요청입니다."),
     DATA_INVALID_EMPTY_VALUE(HttpStatus.BAD_REQUEST, "필수값이 빠져있습니다."),
 
+    // 권한 관련
+    UNAUTHORIZED_ROLE(HttpStatus.UNAUTHORIZED, "권한이 없습니다."),
+    UNAUTHORIZED_ROLE_CREATE(HttpStatus.UNAUTHORIZED, "생성 권한이 없습니다."),
     // # Redis 관련
     REDIS_KEY_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "Redis Key Not Found.");
 

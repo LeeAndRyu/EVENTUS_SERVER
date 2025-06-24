@@ -14,16 +14,16 @@ public class GlobalException extends RuntimeException {
     private Throwable cause;
     private Object data;
 
+    public GlobalException(ErrorCode errorCode) {
+        this.status = errorCode.getStatus();
+        this.errorMessage = errorCode.getMessage();
+    }
+
     public GlobalException(ErrorCode errorCode, Throwable cause, Object data) {
         this.status = errorCode.getStatus();
         this.errorMessage = errorCode.getMessage();
         this.cause = cause;
         this.data = data;
-    }
-
-    public GlobalException(ErrorCode errorCode) {
-        this.status = errorCode.getStatus();
-        this.errorMessage = errorCode.getMessage();
     }
 
 
