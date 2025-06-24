@@ -14,10 +14,11 @@ public enum ErrorCode {
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "INTERNAL_SERVER_ERROR 서버측 알수 없는 에러입니다."),
     BAD_REQUEST_ENUM(HttpStatus.BAD_REQUEST, "잘못된 enum 값 요청입니다."),
     DATA_INVALID_EMPTY_VALUE(HttpStatus.BAD_REQUEST, "필수값이 빠져있습니다."),
+    UNAUTHORIZED(HttpStatus.UNAUTHORIZED, "로그인이 필요한 기능입니다."),
 
     // 권한 관련
-    UNAUTHORIZED_ROLE(HttpStatus.UNAUTHORIZED, "권한이 없습니다."),
-    UNAUTHORIZED_ROLE_CREATE(HttpStatus.UNAUTHORIZED, "생성 권한이 없습니다."),
+    FORBIDDEN(HttpStatus.UNAUTHORIZED, "권한이 없습니다."),
+    FORBIDDEN_CREATE(HttpStatus.UNAUTHORIZED, "생성 권한이 없습니다."),
     // # Redis 관련
     REDIS_KEY_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "Redis Key Not Found.");
 

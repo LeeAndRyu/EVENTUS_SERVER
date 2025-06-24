@@ -1,11 +1,13 @@
 package com.hsryuuu.eventus.appllication.exception;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
 
+@AllArgsConstructor
 @Getter
 @Setter
 public class GlobalException extends RuntimeException {
@@ -29,7 +31,7 @@ public class GlobalException extends RuntimeException {
 
     public static GlobalException defaultNotFound(String additionalInfo) {
         String errorMessage = ErrorCode.NOT_FOUND.getMessage() + "=>" + additionalInfo;
-        return new GlobalException(ErrorCode.NOT_FOUND, null, null);
+        return new GlobalException(HttpStatus.NOT_FOUND, errorMessage, null, null);
     }
 
 }

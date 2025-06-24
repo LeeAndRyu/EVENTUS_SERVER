@@ -1,15 +1,15 @@
 create table event
 (
-    id          uuid not null primary key,
-    creatorType varchar(255),
-    title       varchar(255),
-    description varchar(255),
-    event_type  varchar(255),
-    owner_id    uuid,
-    start_time  timestamp,
-    end_time    timestamp,
-    created_at  timestamp,
-    updated_at  timestamp
+    id           uuid not null primary key,
+    creator_type varchar(255),
+    title        varchar(255),
+    description  varchar(255),
+    event_type   varchar(255),
+    owner_id     uuid,
+    start_time   timestamp,
+    end_time     timestamp,
+    created_at   timestamp,
+    updated_at   timestamp
 );
 
 alter table event

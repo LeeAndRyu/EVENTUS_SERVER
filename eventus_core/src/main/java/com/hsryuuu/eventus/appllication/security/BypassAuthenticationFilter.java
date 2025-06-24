@@ -41,7 +41,7 @@ public class BypassAuthenticationFilter extends OncePerRequestFilter {
         List<GrantedAuthority> allUserAuthorities = this.getAllUserAuthorities();
 
         AuthPrincipal principal = new AppUserPrincipal(
-                UUID.randomUUID(),
+                UUID.fromString(DevConstants.SUPER_USER_ID),
                 DevConstants.ADMIN_USER_NAME,
                 UserRole.ADMIN,
                 allUserAuthorities);

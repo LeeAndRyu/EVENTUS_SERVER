@@ -28,20 +28,7 @@ public class MockDataInitializer implements CommandLineRunner {
     }
 
     private void createUser() {
-        final String USERNAME_HSRYU = "hsryu";
-        final String USERNAME_OLUZR = "oluzr";
-        if (!userRepository.existsByUsername(DevConstants.ADMIN_USER_NAME)) {
-            AppUser admin = AppUser.builder()
-                    .username(DevConstants.ADMIN_USER_NAME)
-                    .password(DevConstants.ADMIN_USER_PASSWORD)
-                    .email("happyhsryu@gmail.com")
-                    .role(UserRole.ADMIN)
-                    .nickname("ADMIN")
-                    .phone("010-0000-0000")
-                    .build();
-            userRepository.save(admin);
-        }
-        if (!userRepository.existsByUsername(USERNAME_HSRYU)) {
+        if (!userRepository.existsByUsername(DevConstants.USERNAME_HSRYU)) {
             AppUser admin1 = AppUser.builder()
                     .username(DevConstants.USERNAME_HSRYU)
                     .password(DevConstants.USERNAME_HSRYU)
@@ -52,7 +39,7 @@ public class MockDataInitializer implements CommandLineRunner {
                     .build();
             userRepository.save(admin1);
         }
-        if (!userRepository.existsByUsername(USERNAME_OLUZR)) {
+        if (!userRepository.existsByUsername(DevConstants.USERNAME_OLUZR)) {
             AppUser admin2 = AppUser.builder()
                     .username(DevConstants.USERNAME_OLUZR)
                     .password(DevConstants.USERNAME_OLUZR)
