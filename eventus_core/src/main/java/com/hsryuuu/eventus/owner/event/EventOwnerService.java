@@ -1,14 +1,16 @@
-package com.hsryuuu.eventus.domain.event;
+package com.hsryuuu.eventus.owner.event;
 
 import com.hsryuuu.eventus.appllication.exception.impl.OwnerException;
 import com.hsryuuu.eventus.appllication.security.SecurityUtils;
 import com.hsryuuu.eventus.appllication.util.DateTimeValidator;
-import com.hsryuuu.eventus.domain.event.dto.CreateEventRequest;
+import com.hsryuuu.eventus.domain.event.EventQueryRepository;
+import com.hsryuuu.eventus.domain.event.EventRepository;
 import com.hsryuuu.eventus.domain.event.dto.EventDto;
 import com.hsryuuu.eventus.domain.event.entity.Event;
 import com.hsryuuu.eventus.domain.event.entity.EventCondition;
 import com.hsryuuu.eventus.member.owner.OwnerRepository;
 import com.hsryuuu.eventus.member.owner.entity.Owner;
+import com.hsryuuu.eventus.owner.event.dto.CreateEventRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +19,7 @@ import java.util.*;
 
 @RequiredArgsConstructor
 @Service
-public class EventService {
+public class EventOwnerService {
 
     private final OwnerRepository ownerRepository;
     private final EventRepository eventRepository;

@@ -1,4 +1,4 @@
-package com.hsryuuu.eventus.domain.event.dto;
+package com.hsryuuu.eventus.owner.event.dto;
 
 import com.hsryuuu.eventus.domain.event.type.EventConditionType;
 import lombok.AllArgsConstructor;

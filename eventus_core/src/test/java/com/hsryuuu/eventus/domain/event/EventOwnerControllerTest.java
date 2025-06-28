@@ -2,11 +2,11 @@ package com.hsryuuu.eventus.domain.event;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hsryuuu.eventus.appllication.security.BypassUserFactory;
-import com.hsryuuu.eventus.domain.event.dto.CreateEventConditionDto;
-import com.hsryuuu.eventus.domain.event.dto.CreateEventRequest;
 import com.hsryuuu.eventus.domain.event.type.EventConditionType;
 import com.hsryuuu.eventus.domain.event.type.EventCreatorType;
 import com.hsryuuu.eventus.domain.event.type.EventType;
+import com.hsryuuu.eventus.owner.event.dto.CreateEventConditionDto;
+import com.hsryuuu.eventus.owner.event.dto.CreateEventRequest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @Transactional
 @SpringBootTest
 @AutoConfigureMockMvc
-class EventControllerTest {
+class EventOwnerControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
@@ -58,7 +58,7 @@ class EventControllerTest {
                 ))
                 .build();
 
-        mockMvc.perform(post("/api/events")
+        mockMvc.perform(post("/api/owner/events")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
