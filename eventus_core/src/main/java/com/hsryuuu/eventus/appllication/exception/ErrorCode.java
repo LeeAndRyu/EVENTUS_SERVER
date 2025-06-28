@@ -19,6 +19,13 @@ public enum ErrorCode {
     // 권한 관련
     FORBIDDEN(HttpStatus.UNAUTHORIZED, "권한이 없습니다."),
     FORBIDDEN_CREATE(HttpStatus.UNAUTHORIZED, "생성 권한이 없습니다."),
+
+    // 시간 관련
+    INVALID_TIME(HttpStatus.BAD_REQUEST, "시간(기간) 설정에 문제가 있습니다."),
+    TIME_IS_NULL(HttpStatus.BAD_REQUEST, "시간이 누락되었습니다."),
+    START_TIME_IS_NULL(HttpStatus.BAD_REQUEST, "시작 시간이 누락되었습니다."),
+    END_TIME_IS_NULL(HttpStatus.BAD_REQUEST, "죵료 시간이 누락되었습니다."),
+    INVALID_TIME_RANGE(HttpStatus.BAD_REQUEST, "시작시간은 종료시간보다 빠르게 설정해야 합니다."),
     // # Redis 관련
     REDIS_KEY_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR, "Redis Key Not Found.");
 
