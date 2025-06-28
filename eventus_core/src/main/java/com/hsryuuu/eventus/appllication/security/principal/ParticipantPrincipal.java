@@ -1,6 +1,6 @@
 package com.hsryuuu.eventus.appllication.security.principal;
 
-import com.hsryuuu.eventus.user.appuser.UserRole;
+import com.hsryuuu.eventus.member.appuser.UserRole;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

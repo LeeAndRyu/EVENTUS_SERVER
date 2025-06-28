@@ -1,4 +1,4 @@
-package com.hsryuuu.eventus.user.owner.entity;
+package com.hsryuuu.eventus.member.owner.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

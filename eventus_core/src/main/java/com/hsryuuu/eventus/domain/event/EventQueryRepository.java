@@ -3,7 +3,7 @@ package com.hsryuuu.eventus.domain.event;
 import com.hsryuuu.eventus.domain.event.entity.Event;
 import com.hsryuuu.eventus.domain.event.entity.QEvent;
 import com.hsryuuu.eventus.domain.event.entity.QEventCondition;
-import com.hsryuuu.eventus.user.owner.entity.QOwner;
+import com.hsryuuu.eventus.member.owner.entity.QOwner;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

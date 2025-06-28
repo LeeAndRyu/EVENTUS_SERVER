@@ -3,7 +3,7 @@ package com.hsryuuu.eventus.domain.event.dto;
 import com.hsryuuu.eventus.domain.event.entity.Event;
 import com.hsryuuu.eventus.domain.event.type.EventCreatorType;
 import com.hsryuuu.eventus.domain.event.type.EventType;
-import com.hsryuuu.eventus.user.owner.entity.Owner;
+import com.hsryuuu.eventus.member.owner.entity.Owner;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

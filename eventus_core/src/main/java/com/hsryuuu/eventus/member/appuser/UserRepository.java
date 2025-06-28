@@ -1,6 +1,6 @@
-package com.hsryuuu.eventus.user.appuser;
+package com.hsryuuu.eventus.member.appuser;
 
-import com.hsryuuu.eventus.user.appuser.entity.AppUser;
+import com.hsryuuu.eventus.member.appuser.entity.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

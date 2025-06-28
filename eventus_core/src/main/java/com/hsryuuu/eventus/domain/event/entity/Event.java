@@ -2,7 +2,7 @@ package com.hsryuuu.eventus.domain.event.entity;
 
 import com.hsryuuu.eventus.domain.event.type.EventCreatorType;
 import com.hsryuuu.eventus.domain.event.type.EventType;
-import com.hsryuuu.eventus.user.owner.entity.Owner;
+import com.hsryuuu.eventus.member.owner.entity.Owner;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;

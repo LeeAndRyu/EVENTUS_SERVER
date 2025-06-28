@@ -1,6 +1,6 @@
-package com.hsryuuu.eventus.user.appuser.entity;
+package com.hsryuuu.eventus.member.appuser.entity;
 
-import com.hsryuuu.eventus.user.appuser.UserRole;
+import com.hsryuuu.eventus.member.appuser.UserRole;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

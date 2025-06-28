@@ -1,4 +1,4 @@
-package com.hsryuuu.eventus.user.appuser;
+package com.hsryuuu.eventus.member.appuser;
 
 public enum UserRole {
     ADMIN,
