@@ -6,10 +6,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(name = "이벤트 API")
 @RequiredArgsConstructor
@@ -24,6 +23,13 @@ public class EventController {
     @PostMapping
     public EventDto createEvent(@RequestBody CreateEventRequest request) {
         return eventService.createEvent(request);
+    }
+
+    @Operation(summary = "이벤트 조회 (임시)")
+    @GetMapping
+    public List<EventDto> getParticipants() {
+
+        return eventService.findAll();
     }
 
 //    @Operation(summary = "이벤트 참여")

@@ -13,10 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collections;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.UUID;
+import java.util.*;
 
 @RequiredArgsConstructor
 @Service
@@ -24,6 +21,7 @@ public class EventService {
 
     private final OwnerRepository ownerRepository;
     private final EventRepository eventRepository;
+    private final EventQueryRepository eventQueryRepository;
 
     @Transactional
     public EventDto createEvent(CreateEventRequest request) {
@@ -44,5 +42,14 @@ public class EventService {
         Event saved = eventRepository.save(event);
 
         return EventDto.fromEntity(saved);
+    }
+
+    @Transactional(readOnly = true)
+    public List<EventDto> findAll() {
+        // TEMP: 검색 / 페이지네이션 필요
+        return eventQueryRepository.findAll()
+                .stream()
+                .map(EventDto::fromEntity)
+                .toList();
     }
 }
