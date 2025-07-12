@@ -6,8 +6,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,9 +22,7 @@ import java.util.Map;
 public class TestController {
 
     private final Environment env;
-    private final TestService testService;
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "현재 서버 properties")
     @GetMapping("/properties")
     public Map<String, Object> test() {
@@ -54,18 +50,9 @@ public class TestController {
         return response;
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @Operation(summary = "현재 인증 유저 정보")
     @GetMapping("/current-user")
     public AuthPrincipal currentUser() {
         return SecurityUtils.getCurrentUser();
     }
-
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    @Operation(summary = "이벤트 관련 전체 삭제")
-    @DeleteMapping("/delete-event")
-    public void deleteEvent() {
-        testService.deleteAllEvents();
-    }
-
 }

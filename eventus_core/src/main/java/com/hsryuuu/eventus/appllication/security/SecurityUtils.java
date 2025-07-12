@@ -1,12 +1,11 @@
 package com.hsryuuu.eventus.appllication.security;
 
-import com.hsryuuu.eventus.appllication.exception.ErrorCode;
-import com.hsryuuu.eventus.appllication.exception.GlobalException;
 import com.hsryuuu.eventus.appllication.security.principal.AuthPrincipal;
-import com.hsryuuu.eventus.member.appuser.UserRole;
-import org.springframework.lang.Nullable;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+
+import java.util.Optional;
+import java.util.UUID;
 
 public class SecurityUtils {
 
@@ -18,21 +17,14 @@ public class SecurityUtils {
         return null;
     }
 
-    public static boolean isUserHasRole(@Nullable AuthPrincipal user, UserRole requiredRole) {
-        if (user == null) return false;
-        UserRole actualRole = user.getUserRole();
-
-        return actualRole == UserRole.ADMIN || actualRole == requiredRole;
-    }
-
-
-    public static void assertCurrentUserRole(UserRole requiredRole) {
+    public static Optional<UUID> getCurrentUserId() {
         AuthPrincipal currentUser = getCurrentUser();
-        if (currentUser == null) {
-            throw new GlobalException(ErrorCode.UNAUTHORIZED);
+
+        if (currentUser != null) {
+            return Optional.of(currentUser.getId());
         }
-        if (!isUserHasRole(currentUser, requiredRole)) {
-            throw new GlobalException(ErrorCode.FORBIDDEN);
-        }
+        return Optional.empty();
     }
+
+
 }

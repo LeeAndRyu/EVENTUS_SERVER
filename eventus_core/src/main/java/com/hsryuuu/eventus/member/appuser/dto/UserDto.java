@@ -1,6 +1,5 @@
 package com.hsryuuu.eventus.member.appuser.dto;
 
-import com.hsryuuu.eventus.member.appuser.UserRole;
 import com.hsryuuu.eventus.member.appuser.entity.AppUser;
 import lombok.*;
 
@@ -17,7 +16,6 @@ public class UserDto {
     private String username;
     private String password;
     private String email;
-    private UserRole role;
     private String nickname;
     private String phone;
     private LocalDateTime createdAt;
@@ -29,7 +27,6 @@ public class UserDto {
                 .username(appUser.getUsername())
                 .password(appUser.getPassword())
                 .email(appUser.getEmail())
-                .role(appUser.getRole())
                 .nickname(appUser.getNickname())
                 .phone(appUser.getPhone())
                 .createdAt(appUser.getCreatedAt())

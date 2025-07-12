@@ -20,8 +20,7 @@ public class BypassUserFactory {
 
         AuthPrincipal principal = new AppUserPrincipal(
                 UUID.fromString(DevConstants.SUPER_USER_ID),
-                DevConstants.ADMIN_USER_NAME,
-                UserRole.ADMIN,
+                DevConstants.SUPER_USER_NAME,
                 allUserAuthorities);
 
         return new UsernamePasswordAuthenticationToken(

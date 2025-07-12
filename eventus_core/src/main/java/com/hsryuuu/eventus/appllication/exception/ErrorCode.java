@@ -19,6 +19,8 @@ public enum ErrorCode {
     // 권한 관련
     FORBIDDEN(HttpStatus.UNAUTHORIZED, "권한이 없습니다."),
     FORBIDDEN_CREATE(HttpStatus.UNAUTHORIZED, "생성 권한이 없습니다."),
+    // 유저 관련
+    LOGIN_REQUIRED(HttpStatus.UNAUTHORIZED, "로그인이 필요한 기능입니다."),
 
     // 시간 관련
     INVALID_TIME(HttpStatus.BAD_REQUEST, "시간(기간) 설정에 문제가 있습니다."),

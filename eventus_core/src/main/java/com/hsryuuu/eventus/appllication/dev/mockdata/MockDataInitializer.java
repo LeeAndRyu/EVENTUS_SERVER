@@ -2,7 +2,6 @@ package com.hsryuuu.eventus.appllication.dev.mockdata;
 
 import com.hsryuuu.eventus.appllication.dev.constants.DevConstants;
 import com.hsryuuu.eventus.member.appuser.UserRepository;
-import com.hsryuuu.eventus.member.appuser.UserRole;
 import com.hsryuuu.eventus.member.appuser.entity.AppUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -33,7 +32,6 @@ public class MockDataInitializer implements CommandLineRunner {
                     .username(DevConstants.USERNAME_HSRYU)
                     .password(DevConstants.USERNAME_HSRYU)
                     .email("happyhsryu@gmail.com")
-                    .role(UserRole.ADMIN)
                     .nickname("ADMIN-hsryuuuu")
                     .phone("010-0000-0000")
                     .build();
@@ -44,7 +42,6 @@ public class MockDataInitializer implements CommandLineRunner {
                     .username(DevConstants.USERNAME_OLUZR)
                     .password(DevConstants.USERNAME_OLUZR)
                     .email("oluzr@gmail.com")
-                    .role(UserRole.ADMIN)
                     .nickname("ADMIN-oluzr")
                     .phone("010-0000-0000")
                     .build();
