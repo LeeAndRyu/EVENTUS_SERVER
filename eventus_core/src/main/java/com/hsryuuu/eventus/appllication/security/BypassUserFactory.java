@@ -3,7 +3,7 @@ package com.hsryuuu.eventus.appllication.security;
 import com.hsryuuu.eventus.appllication.dev.constants.DevConstants;
 import com.hsryuuu.eventus.appllication.security.principal.AppUserPrincipal;
 import com.hsryuuu.eventus.appllication.security.principal.AuthPrincipal;
-import com.hsryuuu.eventus.member.appuser.UserRole;
+import com.hsryuuu.eventus.user.appuser.type.UserRole;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;

@@ -1,8 +1,8 @@
 package com.hsryuuu.eventus.appllication.dev.mockdata;
 
 import com.hsryuuu.eventus.appllication.dev.constants.DevConstants;
-import com.hsryuuu.eventus.member.appuser.UserRepository;
-import com.hsryuuu.eventus.member.appuser.entity.AppUser;
+import com.hsryuuu.eventus.user.appuser.UserRepository;
+import com.hsryuuu.eventus.user.appuser.entity.AppUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;

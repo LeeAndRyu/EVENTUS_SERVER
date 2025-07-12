@@ -1,6 +1,6 @@
-package com.hsryuuu.eventus.member.appuser.dto;
+package com.hsryuuu.eventus.user.appuser.dto;
 
-import com.hsryuuu.eventus.member.appuser.entity.AppUser;
+import com.hsryuuu.eventus.user.appuser.entity.AppUser;
 import lombok.*;
 
 import java.time.LocalDateTime;

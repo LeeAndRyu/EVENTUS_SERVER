@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Tag(name = "Task API")
+@Tag(name = "작업(TODO) API")
 @RequiredArgsConstructor
 @RequestMapping("/api/tasks")
 @RestController

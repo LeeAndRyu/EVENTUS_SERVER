@@ -1,6 +1,6 @@
-package com.hsryuuu.eventus.member.appuser;
+package com.hsryuuu.eventus.user.appuser;
 
-import com.hsryuuu.eventus.member.appuser.dto.UserDto;
+import com.hsryuuu.eventus.user.appuser.dto.UserDto;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
