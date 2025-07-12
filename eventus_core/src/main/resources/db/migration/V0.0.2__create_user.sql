@@ -13,18 +13,3 @@ create table app_user
 
 alter table app_user
     owner to root;
-
-create table owner
-(
-    id               uuid         not null primary key,
-    username         varchar(100) not null unique,
-    password         varchar(255) not null,
-    business_name    varchar(255),
-    email            varchar(255),
-    phone            varchar(50),
-    created_at       timestamp,
-    last_modified_at timestamp
-);
-
-alter table owner
-    owner to root;
