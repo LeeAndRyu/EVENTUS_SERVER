@@ -1,8 +1,8 @@
-package com.hsryuuu.eventus.task;
+package com.hsryuuu.eventus.task.task;
 
 import com.hsryuuu.eventus.appllication.security.SecurityUtils;
-import com.hsryuuu.eventus.task.dto.CreateTaskRequest;
-import com.hsryuuu.eventus.task.dto.TaskDto;
+import com.hsryuuu.eventus.task.task.dto.CreateTaskRequest;
+import com.hsryuuu.eventus.task.task.dto.TaskDto;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;

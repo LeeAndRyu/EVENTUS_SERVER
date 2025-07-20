@@ -3,13 +3,13 @@ package com.hsryuuu.eventus.appllication.exception.impl;
 import com.hsryuuu.eventus.appllication.exception.ErrorCode;
 import com.hsryuuu.eventus.appllication.exception.GlobalException;
 
-public class EventException extends GlobalException {
+public class TaskException extends GlobalException {
 
-    public EventException() {
+    public TaskException() {
         super(ErrorCode.UNAUTHORIZED);
     }
 
-    public EventException(ErrorCode errorCode) {
+    public TaskException(ErrorCode errorCode) {
         super(errorCode);
     }
 

@@ -1,8 +1,6 @@
-package com.hsryuuu.eventus.task.dto;
+package com.hsryuuu.eventus.task.task.dto;
 
-import com.hsryuuu.eventus.task.type.TaskPriority;
-import com.hsryuuu.eventus.task.type.TaskStatus;
-import com.hsryuuu.eventus.task.type.TaskType;
+import com.hsryuuu.eventus.task.task.type.TaskPriority;
 import lombok.*;
 
 import java.time.LocalDateTime;
@@ -16,9 +14,11 @@ import java.util.UUID;
 @Builder
 public class TaskDto {
     private UUID id;
+    private UUID parentId;
+    private Integer seq;
     private String title;
-    private TaskType type;
-    private TaskStatus status;
+    private Boolean isCompleted;
+    private UUID categoryId;
     private TaskPriority priority;
     private LocalDateTime startAt;
     private LocalDateTime dueAt;

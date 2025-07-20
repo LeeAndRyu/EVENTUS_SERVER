@@ -1,35 +1,36 @@
-package com.hsryuuu.eventus.task;
+package com.hsryuuu.eventus.task.task.dto;
 
-import com.hsryuuu.eventus.task.dto.CreateTaskRequest;
-import com.hsryuuu.eventus.task.dto.TaskDto;
-import com.hsryuuu.eventus.task.entity.Task;
+import com.hsryuuu.eventus.task.category.entity.Category;
+import com.hsryuuu.eventus.task.task.entity.Task;
 
 public class TaskMapper {
 
     public static Task toEntity(CreateTaskRequest req) {
         return Task.builder()
+                .parentId(req.getParentId())
+                .seq(req.getSeq())
                 .title(req.getTitle())
-                .type(req.getType())
-                .status(req.getStatus())
-                .priority(req.getPriority())
+                .isCompleted(false)
+                .category(new Category(req.getCategoryId()))
                 .startAt(req.getStartAt())
                 .dueAt(req.getDueAt())
-                .properties(req.getProperties())
+                .priority(req.getPriority())
                 .build();
     }
 
     public static TaskDto fromEntity(Task task) {
         return TaskDto.builder()
                 .id(task.getId())
+                .parentId(task.getParentId())
+                .seq(task.getSeq())
                 .title(task.getTitle())
-                .type(task.getType())
-                .status(task.getStatus())
+                .isCompleted(task.getIsCompleted())
+                .categoryId(task.getCategory().getId())
                 .priority(task.getPriority())
                 .startAt(task.getStartAt())
                 .dueAt(task.getDueAt())
                 .createdAt(task.getCreatedAt())
                 .updatedAt(task.getUpdatedAt())
-                .properties(task.getProperties())
                 .creatorId(task.getCreatorId())
                 .build();
     }

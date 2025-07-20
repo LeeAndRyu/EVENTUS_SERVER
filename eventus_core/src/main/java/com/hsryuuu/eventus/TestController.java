@@ -2,6 +2,7 @@ package com.hsryuuu.eventus;
 
 import com.hsryuuu.eventus.appllication.security.SecurityUtils;
 import com.hsryuuu.eventus.appllication.security.principal.AuthPrincipal;
+import com.hsryuuu.eventus.task.task.type.TaskPriority;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -15,9 +16,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-@Tag(name = "TEST API")
+@Tag(name = "DEV API")
 @RequiredArgsConstructor
-@RequestMapping("/api/test")
+@RequestMapping("/api/dev")
 @RestController
 public class TestController {
 
@@ -54,5 +55,13 @@ public class TestController {
     @GetMapping("/current-user")
     public AuthPrincipal currentUser() {
         return SecurityUtils.getCurrentUser();
+    }
+
+    @Operation(summary = "작업 관련 enum 들")
+    @GetMapping("/enums/task")
+    public Map<String, List<String>> taskEnums() {
+        Map<String, List<String>> map = new LinkedHashMap<>();
+        map.put("작업 우선순위 (Task.priority)", Arrays.stream(TaskPriority.values()).map(TaskPriority::name).toList());
+        return map;
     }
 }

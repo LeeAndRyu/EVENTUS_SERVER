@@ -1,23 +1,18 @@
-package com.hsryuuu.eventus.task.entity;
+package com.hsryuuu.eventus.task.task.entity;
 
-import com.hsryuuu.eventus.task.type.TaskPriority;
-import com.hsryuuu.eventus.task.type.TaskStatus;
-import com.hsryuuu.eventus.task.type.TaskType;
+import com.hsryuuu.eventus.task.category.entity.Category;
+import com.hsryuuu.eventus.task.task.type.TaskPriority;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.UUID;
 
 @Entity
@@ -33,13 +28,17 @@ public class Task {
     @GeneratedValue
     private UUID id;
 
+    private UUID parentId;
+
+    private Integer seq;
+
     private String title;
 
-    @Enumerated(EnumType.STRING)
-    private TaskType type;
+    private Boolean isCompleted;
 
-    @Enumerated(EnumType.STRING)
-    private TaskStatus status;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoryId")
+    private Category category;
 
     private LocalDateTime startAt;
 
@@ -48,10 +47,8 @@ public class Task {
     @Enumerated(EnumType.STRING)
     private TaskPriority priority;
 
-    @Builder.Default
-    @JdbcTypeCode(SqlTypes.JSON)
-    @Column(name = "properties", columnDefinition = "jsonb")
-    private Map<String, Object> properties = new HashMap<>();
+    @CreatedBy
+    private UUID creatorId;
 
     @CreatedDate
     private LocalDateTime createdAt;
@@ -59,6 +56,5 @@ public class Task {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    @CreatedBy
-    private UUID creatorId;
+
 }

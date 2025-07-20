@@ -19,7 +19,7 @@ public class BypassUserFactory {
         List<GrantedAuthority> allUserAuthorities = getAllUserAuthorities();
 
         AuthPrincipal principal = new AppUserPrincipal(
-                UUID.fromString(DevConstants.SUPER_USER_ID),
+                UUID.fromString(DevConstants.DEFAULT_UUID_ID),
                 DevConstants.SUPER_USER_NAME,
                 allUserAuthorities);
 
